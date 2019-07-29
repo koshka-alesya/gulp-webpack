@@ -1,12 +1,12 @@
 # Gulp and Webpack #
 
 ## Folder structure ##
-+ ul app
++ app
   + common
-   * fonts
-   * images
-   * scripts
-   * styles
+   + fonts
+   + images
+   + scripts
+   + styles
  + components
  + layouts
  + pages
