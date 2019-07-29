@@ -3,13 +3,13 @@
 ## Folder structure ##
 + app
   + common
-   + fonts
-   + images
-   + scripts
-   + styles
- + components
- + layouts
- + pages
+    + fonts
+    + images
+    + scripts
+    + styles
+  + components
+  + layouts
+  + pages
 
 ## Basic commands to run the project: ##
 *npm start* - running the development build.
