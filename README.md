@@ -1,6 +1,6 @@
-#Gulp and Webpack#
+# Gulp and Webpack #
 
-##Folder structure##
+## Folder structure ##
 +ul app
   +common
    *fonts
@@ -11,7 +11,7 @@
  +layouts
  +pages
 
-##Basic commands to run the project:##
+## Basic commands to run the project: ##
 npm start - running the development build.
 npm run production - running the production build.
 
