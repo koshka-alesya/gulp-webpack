@@ -1,0 +1,23 @@
+.button {
+    height: 50px;
+    width:250px;
+    border: 0;
+    line-height: 1.71;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    font-family: $font-family-base;
+    cursor: pointer;
+    transition: background-color $animation-time;
+    color: color("white");
+    background-color: color("blue");
+
+    &:hover {
+            background-color: #044ab8;
+        }
+    
+
+   
+}

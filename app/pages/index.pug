@@ -4,6 +4,7 @@ extends ../layouts/default/default
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
+include ../components/checkbox/checkbox
 
 
 //- Выводим контент
@@ -21,7 +22,11 @@ block content
         +page-title('Диваны')
         .mt-xl-12
             .row
-                .col-xl-5.pt-xl-4 left
+                .col-xl-5.pt-xl-4 
+                    +checkbox('check1', 'лейбл')
+                    input.button.button_primary(type="submit" value="Применить")
+                    
+
                 .col-xl-18.offset-xl-1
                     -
                                 var products=[
