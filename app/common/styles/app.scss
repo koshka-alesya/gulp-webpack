@@ -2,21 +2,33 @@
 // @import "../../../node_modules/**/*.css";
 
 // Variables
-@import 'variables/colors';
-@import 'variables/measures';
-@import 'variables/typography';
+@import "variables/colors";
+@import "variables/measures";
+@import "variables/typography";
+@import "variables/grid";
+@import "variables/animation";
 
-// // Core styles
-@import 'core/fonts';
-@import 'core/base';
-@import 'core/typography';
+//helpers
+@import "helpers/sprites";
+@import "helpers/bootstrap";
+
+// Core styles
+@import "core/fonts";
+@import "core/base";
+@import "core/typography";
 
 // Pages
 
 // Components
-@import '../../components/header/header';
-@import '../../components/footer/footer';
-@import '../../components/logo/logo';
-@import '../../components/search/search';
-@import '../../components/icon-btn/icon-btn';
-@import '../../components/nav/nav';
+@import "../../components/link/link";
+@import "../../components/header/header";
+@import "../../components/footer/footer";
+@import "../../components/logo/logo";
+@import "../../components/search/search";
+@import "../../components/icon-btn/icon-btn";
+@import "../../components/input-text/input-text";
+@import "../../components/menu/menu";
+@import "../../components/breadcrumbs/breadcrumbs";
+@import "../../components/page-title/page-title";
+@import "../../components/card-product/card-product";
+@import "../../components/card-list/card-list";

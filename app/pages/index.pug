@@ -1,6 +1,68 @@
 //- Используем стандартный шаблон
 extends ../layouts/default/default
 
+include ../components/breadcrumbs/breadcrumbs
+include ../components/page-title/page-title
+include ../components/card-list/card-list
+
+
 //- Выводим контент
 block content
-    | Index content
+    .container
+        .mt-xl-12.mb-xl-3
+            -
+                var breadcrumbs = [
+                    {url: '#', title: 'Главная', value: 'Главная'},
+                    {url: '#', title: 'Каталог', value: 'Каталог'},
+                    {url: '#', title: 'Мягкая мебель', value: 'Мягкая мебель'},
+                    {value: 'Диваны'}
+                ]
+            +breadcrumbs(breadcrumbs)
+        +page-title('Диваны')
+        .mt-xl-12
+            .row
+                .col-xl-5.pt-xl-4 left
+                .col-xl-18.offset-xl-1
+                    -
+                                var products=[
+                                    {
+                                        url:'#',
+                                        name: 'Monreal',
+                                        img: 'assets/images/item-01.jpg',
+                                        price: '10&nbsp990',
+                                        
+                                    },
+                                     {
+                                        url: '#',
+                                        name: 'Glasgow',
+                                        img: 'assets/images/item-02.jpg',
+                                        price: '19&nbsp;990',
+                                    },
+                                    {
+                                        url: '#',
+                                        name: 'Munich',
+                                        img: 'assets/images/item-03.jpg',
+                                        price: '24&nbsp;990'
+                                    },
+                                    {
+                                        url: '#',
+                                        name: 'Alexandria',
+                                        img: 'assets/images/item-04.jpg',
+                                        price: '109&nbsp;990'
+                                    },
+                                    {
+                                        url: '#',
+                                        name: 'Karachi',
+                                        img: 'assets/images/item-05.jpg',
+                                        price: '17&nbsp;990'
+                                    },
+                                    {
+                                        url: '#',
+                                        name: 'Phoenix',
+                                        img: 'assets/images/item-06.jpg',
+                                        price: '29&nbsp;990'
+                                    }
+                                     ]
+                    
+                    +card-list(products)
+                        

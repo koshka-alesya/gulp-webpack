@@ -1,0 +1,10 @@
+include ../card-product/card-product
+
+mixin card-list(items)
+    .card-list
+        .row
+             each item in items
+                .col-xl-8
+                    +card-product(item)
+
+

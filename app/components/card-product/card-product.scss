@@ -1,0 +1,66 @@
+.card-product{
+  position:relative;
+  padding:20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        transition: opacity $animation-time, visibility $animation-time;
+        pointer-events: none;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__link {
+        color: color("gray-darkest");
+        text-decoration: none; 
+    }
+    
+    &__img {
+        max-height: 270px;
+        object-fit: cover;
+    }
+
+    &__name {
+        display: block;
+        padding-top: 10px;
+        line-height: 1.38;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    &__price {
+        font-weight: bold;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+
+        .icon-btn {
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+

@@ -1,4 +1,4 @@
-.icon-btn{
+.icon-btn {
     display: flex;
     align-items: center;
     padding: 0;
@@ -7,18 +7,30 @@
     background-color: transparent;
     cursor: pointer;
 
-    &__icon{
-        margin-right: 8px;
+    &_only-icon {
+        .icon-btn {
+            &__icon {
+                margin-right: 0;
+            }
+        }
     }
 
-    &__count{
+    &__icon {
+        margin-right: 8px;
+
+        > .icon {
+            display: block;
+        }
+    }
+
+    &__count {
         width: 24px;
         height: 24px;
         text-align: center;
         line-height: 24px;
-        background-color: color('grey-lighter');
+        background-color: color('gray-lighter');
         border-radius: 50%;
-        font-weight: bold;
         font-size: 12px;
+        font-weight: bold;
     }
 }
