@@ -15,11 +15,15 @@
         }
     }
 
+    
+
     &__icon {
         margin-right: 8px;
 
         > .icon {
             display: block;
+            fill: color("blue");
+            transition: fill $animation-time;
         }
     }
 

@@ -1,23 +1,39 @@
-.button {
+.btn {
+    display: inline-block;
     height: 50px;
-    width:250px;
+    padding: 0 85px;
+    margin: 0;
     border: 0;
-    line-height: 1.71;
+    line-height: 50px;
+    background-color: transparent;
     border-radius: 4px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    display: inline-block;
     font-family: $font-family-base;
     cursor: pointer;
+    text-align: center;
     transition: background-color $animation-time;
-    color: color("white");
-    background-color: color("blue");
-
-    &:hover {
-            background-color: #044ab8;
-        }
     
+    &_primary {
+        color: color("white");
+        background-color: color("blue");
 
-   
+        &:hover {
+            background-color: color("blue-dark");
+        }
+    }
+
+    &_clear {
+        color: color("gray-darkest");
+        background-color: color("white");
+        padding:0;
+        margin-left:auto;
+        margin-right:auto;
+        width:100%;
+    }
+
+    &_block {
+        width: 100%;
+    }
 }

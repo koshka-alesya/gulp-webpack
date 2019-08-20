@@ -1,0 +1,13 @@
+include ../icon-btn/icon-btn
+include ../checkbox/checkbox
+
+mixin filter(arr)
+    .filter
+        .filter__trigger
+            span.filter__trigger__name=arr.name
+            .filter__trigger__btn
+                +icon-btn('arrow')
+        .filter__list
+            each item in arr.checkbox
+                .filter__list__item
+                    +checkbox(item.name, item.label)

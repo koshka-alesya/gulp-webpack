@@ -1,6 +1,7 @@
 .card-product{
   position:relative;
   padding:20px;
+  max-height: 426px;
 
     &::before {
         content: '';
@@ -31,12 +32,19 @@
     &__img {
         max-height: 270px;
         object-fit: cover;
+        width: 100%;
+        height: 100%;
+
     }
 
     &__name {
         display: block;
         padding-top: 10px;
         line-height: 1.38;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+
     }
 
     &__container {

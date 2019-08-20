@@ -1,2 +1,23 @@
+include ../breadcrumbs-footer/breadcrumbs-footer
+
+
 mixin footer()
-    footer.footer Footer content
+    footer.footer
+        .container.pt-lg-8.pb-lg-8
+            .footer__top
+                            -
+                                var breadcrumbs_footer = [
+                                    {url: '#', title: 'Каталог', value: 'Каталог'},
+                                    {url: '#', title: 'Оплата', value: 'Оплата'},
+                                    {url: '#', title: 'Доставка', value: 'Доставка'},
+                                    {url: '#', title: 'Возврат', value: 'Возврат'},
+                                    {url: '#', title: 'Сборка', value: 'Сборка'},
+                                    {url: '#', title: 'Помощь', value: 'Помощь'},
+                                    {url: '#', title: 'Обратная связь', value: 'Обратная связь'}
+                                        ]
+                            +breadcrumbs-footer(breadcrumbs_footer)
+                            .footer__top__contact
+                                span.footer__top__contact__text='По любым вопросам обращайтесь'
+                                span.footer__top__contact__number='+7 499 242-12-54'
+            span.footer__copyright='© 2019, Интернет-магазин мебели'
+

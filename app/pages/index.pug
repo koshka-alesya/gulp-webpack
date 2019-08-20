@@ -5,11 +5,13 @@ include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
 include ../components/checkbox/checkbox
+include ../components/filter/filter
+include ../components/filter-color/filter-color
 
 
 //- Выводим контент
 block content
-    .container
+    .container.mb-xl-20
         .mt-xl-12.mb-xl-3
             -
                 var breadcrumbs = [
@@ -23,8 +25,114 @@ block content
         .mt-xl-12
             .row
                 .col-xl-5.pt-xl-4 
-                    +checkbox('check1', 'лейбл')
-                    input.button.button_primary(type="submit" value="Применить")
+
+
+                    -
+                        var filters=
+                                        {name: 'Материал', checkbox:[
+                                            {
+                                                name:'velvet',
+                                                label:'Вельвет'
+                                            },
+                                            {
+                                                name:'microvelur',
+                                                label:'Микровелюр'
+                                            },
+                                            {
+                                                name:'velur',
+                                                label:'Велюр'
+                                            },
+                                            {
+                                                name:'zhacard',
+                                                label:'Жаккард'
+                                            },
+                                            {
+                                                name:'zamsha',
+                                                label:'Замша'
+                                            },
+                                            {
+                                                name:'rogozhka',
+                                                label:'Рогожка'
+                                            }
+                                                ]
+
+                                        }
+                    - 
+                            var filter_angle=
+                            { name: 'Угол', checkbox:[
+                                            {
+                                                name:'left',
+                                                label:'Левый'
+                                            },
+                                            {
+                                                name: 'right',
+                                                label: 'Правый'
+                                            },
+                                            {
+                                                name:'simple',
+                                                label:'Универсальный'
+                                            }
+                                                ]
+
+                                        }
+
+                    - 
+                        var colors=[  
+                                    { 
+                                    color:'ffffff', 
+                                    name:'белый', 
+                                    title:'белый' 
+                                    },
+                                    { 
+                                    color: '000000', 
+                                    name:'черный', 
+                                    title:'черный' 
+                                    },
+                                    { 
+                                    color:'5a5a5a', 
+                                    name:'серый', 
+                                    title:'серый' 
+                                    }, 
+                                    { 
+                                    color:'704d35', 
+                                    name:'коричневый', 
+                                    title:'коричневый' 
+                                    }, 
+                                    { 
+                                    color:'e0791d', 
+                                    name:'оранжевый', 
+                                    title:'оранжевый' 
+                                    }, 
+                                    { 
+                                    color:'ba0606', 
+                                    name:'красный', 
+                                    title:'красный' 
+                                    }, 
+                                    { 
+                                    color:'38a01a', 
+                                    name:'зеленый', 
+                                    title:'зеленый' 
+                                    }, 
+                                    { 
+                                    color:'314976', 
+                                    name:'темно-синий', 
+                                    title:'темно-синий' 
+                                    }, 
+                                    { 
+                                    color:'3748a6', 
+                                    name:'синий', 
+                                    title:'синий' 
+                                    } 
+                                    ]
+                    +filter-color(colors) 
+
+                    
+                    +filter(filters)
+                    +filter(filter_angle)
+                    
+                    input.btn.btn_primary(type='submit' value='Применить')
+                    input.btn.btn_clear(type='reset' value='Очистить фильтр')
+
                     
 
                 .col-xl-18.offset-xl-1

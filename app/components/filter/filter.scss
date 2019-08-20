@@ -1,0 +1,52 @@
+.filter{
+    display:block;
+    margin-top:40px;
+    margin-bottom:40px;
+
+    &__trigger{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom:20px;
+        align-items:center;
+        
+
+        &__name{
+            font-weight: bold;
+            line-height: 1.5;
+        
+        }
+        &__btn{
+            .icon-btn{
+                &_only-icon {
+                    .icon-btn {
+                        &__icon {
+                            transform: rotate(180deg);
+                            > .icon {
+                            fill: black;
+                            }
+                        }
+                    
+                    }
+                }
+                &:hover {
+                    .icon-btn__icon {
+                        > .icon {
+                            fill: color("blue");
+                        }
+                    }
+                }
+            }
+            }
+        
+
+    }
+    
+
+    &__list{
+        display:block;
+       /* display: none;*/
+        &__item{
+            margin-bottom:20px;
+        }
+    }
+}

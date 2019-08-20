@@ -1,0 +1,20 @@
+.breadcrumbs-footer {
+    display: flex;
+    justify-content: center;
+
+    &__list {
+        display: flex;   
+    }
+    &__item{
+        background-color: color('white');
+        height: 30px;
+        border-radius: 2px;
+        padding:0 15px;
+        margin-right: 5px;
+        font-size:14px;
+            a{
+                vertical-align: middle;
+            }
+        
+    }
+}
