@@ -1,13 +1,18 @@
-include ../icon-btn/icon-btn
-include ../checkbox/checkbox
+include ../input-checkbox/input-checkbox
+include ../color-checkbox/color-checkbox
 
-mixin filter(arr)
-    .filter
-        .filter__trigger
-            span.filter__trigger__name=arr.name
-            .filter__trigger__btn
-                +icon-btn('arrow')
-        .filter__list
-            each item in arr.checkbox
-                .filter__list__item
-                    +checkbox(item.name, item.label)
+mixin filter(params)
+    .filter(class=attributes.class ? 'filter_' + attributes.class : '')
+        .filter__title= params.title
+            .filter__title-icon
+                +icon('arrow')
+        .filter__items
+            if attributes.class === 'color'
+                each item, index in params.items
+                    .filter__item
+                        +color-checkbox(item.name + '-' + (index + 1), item.color)
+            else 
+                each item, index in params.items
+                    .filter__item
+                        +input-checkbox(item.name + '-' + (index + 1), item.label)
+                        

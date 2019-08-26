@@ -1,1 +1,1 @@
-console.log("Hello, webpack");
+import * as filterTriggerList from '../../components/filter-list/filter-list.js';

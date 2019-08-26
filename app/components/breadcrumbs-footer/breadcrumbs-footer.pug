@@ -1,7 +1,0 @@
-mixin breadcrumbs-footer(arr)
-    .breadcrumbs-footer
-        ul.breadcrumbs-footer__list
-            if arr
-                each item, index  in arr
-                    li.breadcrumbs-footer__item
-                        a.link(href=item.url title=item.title)= item.value

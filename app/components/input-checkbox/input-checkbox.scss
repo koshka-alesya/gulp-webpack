@@ -1,4 +1,4 @@
-.checkbox {
+.input-checkbox {
     display: inline-flex;
     flex-wrap: wrap;
     cursor: pointer;
@@ -38,7 +38,6 @@
             visibility: hidden;
             transform: translateY(-6px);
             transition: opacity $animation-time, visibility $animation-time, transform $animation-time;
-            
         }
     }
 
@@ -54,7 +53,7 @@
         opacity: 0 !important;
 
         &:checked {
-            + .checkbox__label {
+            + .input-checkbox__label {
                 &::before {
                     border-color: color("blue");
                     background-color: color("blue");
@@ -64,9 +63,15 @@
                     opacity: 1;
                     visibility: visible;
                     transform: translateY(0);
+                }
+
+                &:hover {
+                    &::before {
+                        border-color: color("blue-dark");
+                        background-color: color("blue-dark");
+                    }
+                }
             }
-            
-        }
         }
     }
 }

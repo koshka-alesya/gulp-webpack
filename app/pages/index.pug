@@ -4,15 +4,12 @@ extends ../layouts/default/default
 include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
-include ../components/checkbox/checkbox
-include ../components/filter/filter
-include ../components/filter-color/filter-color
-
+include ../components/filter-list/filter-list
 
 //- Выводим контент
 block content
-    .container.mb-xl-20
-        .mt-xl-12.mb-xl-3
+    .container
+        .mt-md-12.mb-md-3
             -
                 var breadcrumbs = [
                     {url: '#', title: 'Главная', value: 'Главная'},
@@ -22,160 +19,91 @@ block content
                 ]
             +breadcrumbs(breadcrumbs)
         +page-title('Диваны')
-        .mt-xl-12
+        .mt-md-12.mb-md-20
             .row
-                .col-xl-5.pt-xl-4 
-
-
+                .col-lg-5.pt-lg-4.col-md-8
                     -
-                        var filters=
-                                        {name: 'Материал', checkbox:[
-                                            {
-                                                name:'velvet',
-                                                label:'Вельвет'
-                                            },
-                                            {
-                                                name:'microvelur',
-                                                label:'Микровелюр'
-                                            },
-                                            {
-                                                name:'velur',
-                                                label:'Велюр'
-                                            },
-                                            {
-                                                name:'zhacard',
-                                                label:'Жаккард'
-                                            },
-                                            {
-                                                name:'zamsha',
-                                                label:'Замша'
-                                            },
-                                            {
-                                                name:'rogozhka',
-                                                label:'Рогожка'
-                                            }
-                                                ]
-
-                                        }
-                    - 
-                            var filter_angle=
-                            { name: 'Угол', checkbox:[
-                                            {
-                                                name:'left',
-                                                label:'Левый'
-                                            },
-                                            {
-                                                name: 'right',
-                                                label: 'Правый'
-                                            },
-                                            {
-                                                name:'simple',
-                                                label:'Универсальный'
-                                            }
-                                                ]
-
-                                        }
-
-                    - 
-                        var colors=[  
-                                    { 
-                                    color:'ffffff', 
-                                    name:'белый', 
-                                    title:'белый' 
-                                    },
-                                    { 
-                                    color: '000000', 
-                                    name:'черный', 
-                                    title:'черный' 
-                                    },
-                                    { 
-                                    color:'5a5a5a', 
-                                    name:'серый', 
-                                    title:'серый' 
-                                    }, 
-                                    { 
-                                    color:'704d35', 
-                                    name:'коричневый', 
-                                    title:'коричневый' 
-                                    }, 
-                                    { 
-                                    color:'e0791d', 
-                                    name:'оранжевый', 
-                                    title:'оранжевый' 
-                                    }, 
-                                    { 
-                                    color:'ba0606', 
-                                    name:'красный', 
-                                    title:'красный' 
-                                    }, 
-                                    { 
-                                    color:'38a01a', 
-                                    name:'зеленый', 
-                                    title:'зеленый' 
-                                    }, 
-                                    { 
-                                    color:'314976', 
-                                    name:'темно-синий', 
-                                    title:'темно-синий' 
-                                    }, 
-                                    { 
-                                    color:'3748a6', 
-                                    name:'синий', 
-                                    title:'синий' 
-                                    } 
-                                    ]
-                    +filter-color(colors) 
-
-                    
-                    +filter(filters)
-                    +filter(filter_angle)
-                    
-                    input.btn.btn_primary(type='submit' value='Применить')
-                    input.btn.btn_clear(type='reset' value='Очистить фильтр')
-
-                    
-
-                .col-xl-18.offset-xl-1
+                        var filters = [
+                            {
+                                title: 'Цвет',
+                                type: 'color',
+                                items: [
+                                    { name: 'filter-color', color: '#ffffff' },
+                                    { name: 'filter-color', color: '#000000' },
+                                    { name: 'filter-color', color: '#5a5a5a' },
+                                    { name: 'filter-color', color: '#704d35' },
+                                    { name: 'filter-color', color: '#e0791d' },
+                                    { name: 'filter-color', color: '#ba0606' },
+                                    { name: 'filter-color', color: '#38a01a' },
+                                    { name: 'filter-color', color: '#314976' },
+                                    { name: 'filter-color', color: '#3748a6' }
+                                ]
+                            },
+                            {
+                                title: 'Материал',
+                                items: [
+                                    { name: 'filter-fabric', label: 'Вельвет' },
+                                    { name: 'filter-fabric', label: 'Микровелюр' },
+                                    { name: 'filter-fabric', label: 'Велюр' },
+                                    { name: 'filter-fabric', label: 'Жаккард' },
+                                    { name: 'filter-fabric', label: 'Замша' },
+                                    { name: 'filter-fabric', label: 'Рогожка' }
+                                ]
+                            },
+                            {
+                                title: 'Угол',
+                                items: [
+                                    { name: 'filter-angle', label: 'Левый' },
+                                    { name: 'filter-angle', label: 'Правый' },
+                                    { name: 'filter-angle', label: 'Универсальный' }
+                                ]
+                            }
+                        ]
+                    +filter-list(filters)
+                .col-lg-18.offset-lg-1.col-md-16
                     -
-                                var products=[
-                                    {
-                                        url:'#',
-                                        name: 'Monreal',
-                                        img: 'assets/images/item-01.jpg',
-                                        price: '10&nbsp990',
-                                        
-                                    },
-                                     {
-                                        url: '#',
-                                        name: 'Glasgow',
-                                        img: 'assets/images/item-02.jpg',
-                                        price: '19&nbsp;990',
-                                    },
-                                    {
-                                        url: '#',
-                                        name: 'Munich',
-                                        img: 'assets/images/item-03.jpg',
-                                        price: '24&nbsp;990'
-                                    },
-                                    {
-                                        url: '#',
-                                        name: 'Alexandria',
-                                        img: 'assets/images/item-04.jpg',
-                                        price: '109&nbsp;990'
-                                    },
-                                    {
-                                        url: '#',
-                                        name: 'Karachi',
-                                        img: 'assets/images/item-05.jpg',
-                                        price: '17&nbsp;990'
-                                    },
-                                    {
-                                        url: '#',
-                                        name: 'Phoenix',
-                                        img: 'assets/images/item-06.jpg',
-                                        price: '29&nbsp;990'
-                                    }
-                                     ]
-                    
-                    +card-list(products)
-                        
+                        var cards = [
+                            {
+                                href: '#',
+                                name: 'Montreal',
+                                imgUrl: 'assets/images/item-01.jpg',
+                                price: '10&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Glasgow',
+                                imgUrl: 'assets/images/item-02.jpg',
+                                price: '19&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Munich',
+                                imgUrl: 'assets/images/item-03.jpg',
+                                price: '24&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Alexandria',
+                                imgUrl: 'assets/images/item-04.jpg',
+                                price: '109&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Karachi',
+                                imgUrl: 'assets/images/item-05.jpg',
+                                price: '17&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Phoenix',
+                                imgUrl: 'assets/images/item-06.jpg',
+                                price: '29&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            }
+                        ]
+                    +card-list(cards)                   
