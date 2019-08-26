@@ -9,7 +9,7 @@ include ../components/filter-list/filter-list
 //- Выводим контент
 block content
     .container
-        .mt-md-12.mb-md-3
+        .mt-md-12.mb-md-3.mt-xxs-8.mb-xxs-4
             -
                 var breadcrumbs = [
                     {url: '#', title: 'Главная', value: 'Главная'},
@@ -19,9 +19,9 @@ block content
                 ]
             +breadcrumbs(breadcrumbs)
         +page-title('Диваны')
-        .mt-md-12.mb-md-20
+        .mt-md-12.mb-md-20.mt-xxs-8.mb-xxs-10
             .row
-                .col-lg-5.pt-lg-4.col-md-8
+                .col-lg-5.pt-lg-4.col-md-8.col-xxs-24
                     -
                         var filters = [
                             {
@@ -60,7 +60,7 @@ block content
                             }
                         ]
                     +filter-list(filters)
-                .col-lg-18.offset-lg-1.col-md-16
+                .col-lg-18.offset-lg-1.col-md-16.col-xxs-24
                     -
                         var cards = [
                             {

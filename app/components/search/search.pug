@@ -1,5 +1,10 @@
 include ../input-text/input-text
+include ../icon-btn/icon-btn
 
 mixin search()
-    form(action='' class='search')
-        +input-text()(name='search-input' value='' placeholder='Поиск')
+    .search 
+        form(action='' class='search')
+            .search__input-text
+                +input-text()(name='search-input' value='' placeholder='Поиск')
+            .search__icon-btn
+                +icon-btn('search')

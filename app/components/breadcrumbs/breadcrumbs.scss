@@ -1,6 +1,10 @@
 .breadcrumbs {
     display: flex;
     justify-content: center;
+    
+    @include media-breakpoint-down(xs){
+        font-size: 12px;
+    }
 
     &__list {
         display: flex;

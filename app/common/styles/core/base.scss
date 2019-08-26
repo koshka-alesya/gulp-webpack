@@ -36,4 +36,7 @@ ol {
 }
 .container{
     padding: 0 34px;
+    @include media-breakpoint-down(xs){
+        padding: 0 20px;
+    }
 }

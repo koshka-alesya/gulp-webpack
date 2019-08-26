@@ -4,7 +4,7 @@ mixin footer()
     footer.footer 
         .container
             .row
-                .col-md-13
+                .col-md-13.col-xxs-24.order-xxs-2
                     .footer__nav
                         -
                             var footerNav = [
@@ -18,7 +18,7 @@ mixin footer()
                             ]
                         +footer-menu(footerNav)
                     .footer__copyright &copy; 2019, Интернет-магазин мебели
-                .col-lg-5.offset-lg-6.col-md-8.offset-md-3
+                .col-lg-5.offset-lg-6.col-md-8.offset-md-3.col-xxs-24.order-xxs-1
                     .footer__phone
                         .footer__phone-text По любым вопросам обращайтесь:
                         a.footer__phone-link(href='tel:+74992421254' title='+7 499 242-12-54') +7 499 242-12-54

@@ -24,6 +24,9 @@
 
         .icon-btn {
             margin-right: 40px;
+            @include media-breakpoint-down(xs){
+                margin-right:20px;
+            }
 
             &:last-child {
                 margin-right: 0;

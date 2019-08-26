@@ -1,0 +1,17 @@
+.search{
+   &__input-text{
+    @include media-breakpoint-down(xs){
+        display:none;
+   }
+}
+   &__icon-btn{
+       display:none;
+    @include media-breakpoint-down(xs){
+        display:block;
+   }
+   }
+   
+
+}
+
+   
