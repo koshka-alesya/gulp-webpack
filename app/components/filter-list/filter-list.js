@@ -1,4 +1,4 @@
-const filterTriggerList = document.querySelectorAll('.filter-list__item__js-filter-trigger');
+const filterTriggerList = document.querySelectorAll('.js-filter-trigger');
 const classes = {
     isActive: 'is-active'
     }

@@ -9,19 +9,21 @@
         }
     }
 
-    &__item__js-filter-trigger{
-        &.is-active {
-            .filter__items {
-                display: block;
-            }
-            .filter__title-icon{
-                .icon {
-                    transform: rotate(180deg);
+    &__item
+        {
+            .js-filter-trigger{
+                &.is-active {
+                    .filter__items {
+                        display: block;
+                    }
+                    .filter__title-icon{
+                        .icon {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
-            }
-        }
     }
-
+        }
     .filter__items {
          display: none;
          margin-bottom: 40px;
