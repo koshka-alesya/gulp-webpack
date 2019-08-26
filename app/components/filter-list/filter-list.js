@@ -11,8 +11,9 @@ const toggleClass = (el, className) => {
     }
 }
 
-for (var i = 0; i < filterTriggerList.length; i++) {
-    filterTriggerList[i].addEventListener('click', (e) => {
-            toggleClass(e.currentTarget, classes.isActive);
-        });
-}
+filterTriggerList.forEach((filterTrigger)=>
+{
+    filterTrigger.addEventListener('click',(e) => {
+        toggleClass(e.currentTarget, classes.isActive);
+    } );
+})
